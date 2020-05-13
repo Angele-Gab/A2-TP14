@@ -20,17 +20,19 @@ layout.addWidget(button2)
 
 class Window (QWidget) :
 
-    def __init__(self,n):
+    def __init__(self):
         QWidget.__init__(self)
-        self.__n = n
 
-        box = QVBoxLayout()
-        widget = []
-        for i in  range (0,n) :
-            widget.append(QLabel("Label"))
-            for i in widget :
-                box.addWidget(i)
-            self.setLayout(box)
+        self.layout = QVBoxLayout()
+
+        self.label = QLabel("Premier exercice du TP14")
+        self.button = QPushButton("   1   ")
+
+        self.layout.addWidget(self.label)
+        self.layout.addWidget(self.button)
+
+        self.setLayout(self.layout)
+
 
 
 
@@ -42,6 +44,6 @@ app.exec_()
 
 if __name__ == "__main__":
    #app = QApplication([])
-   win = Window(3)
+   win = Window()
    win.show()
    app.exec_()
